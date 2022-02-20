@@ -440,106 +440,39 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
-/***/ 4349:
-/*!**************************************!*\
-  !*** ./src/app/modelo/WaterBoard.ts ***!
-  \**************************************/
+/***/ 7219:
+/*!*************************************************!*\
+  !*** ./src/app/services/back-button.service.ts ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "WaterBoard": () => (/* binding */ WaterBoard)
+/* harmony export */   "BackButtonService": () => (/* binding */ BackButtonService)
 /* harmony export */ });
-class WaterBoard {
-    constructor() {
-        this.fotos_paths = [];
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 8583);
+
+
+
+let BackButtonService = class BackButtonService {
+    constructor(location) {
+        this.location = location;
     }
-}
-
-
-/***/ }),
-
-/***/ 2499:
-/*!********************************************************!*\
-  !*** ./src/app/services/serv-waterboard-db.service.ts ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ServWaterboardDbService": () => (/* binding */ ServWaterboardDbService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/compat/firestore */ 2182);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 8049);
-
-
-
-
-let ServWaterboardDbService = class ServWaterboardDbService {
-    constructor(afs) {
-        this.afs = afs;
-    }
-    // guardamos en la base de datos un registro 
-    saveWaterBoard(waterboard) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            const refUsuario = this.afs.collection("waterboard"); //referencia a la tabla de la base de datos
-            if (waterboard.uid == null)
-                waterboard.uid = this.afs.createId();
-            refUsuario.doc(waterboard.uid).set(Object.assign({}, waterboard), { merge: true });
-        });
-    }
-    // retorna una lista de las juntas de agua las cuales no tengan un eliminado logico
-    getWaterBoards() {
-        // return this.afs.collection("waterboard",ref => ref.where('deleted', '==', false)).valueChanges();  
-        return this.afs.collection("waterboard").valueChanges();
-    }
-    // retorna determinada junta en funcion al uid de la misma
-    getWaterBoardById(uid) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            try {
-                let aux = yield this.afs.collection("waterboard", ref => ref.where('uid', '==', uid))
-                    .valueChanges().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.first)()).toPromise().then(doc => {
-                    return doc;
-                }).catch(error => {
-                    throw error;
-                });
-                if (aux == null)
-                    return {};
-                return aux[0];
-            }
-            catch (error) {
-                console.error("Error get waterboard ById", error);
-                throw error;
-            }
-        });
-    }
-    //segunda manera de obtener una determinada junta
-    getWaterBoardById2(uid) {
-        console.log("ACTIVE SERVICIO");
-        return this.afs.collection("waterboard", ref => ref.where('uid', '==', uid)).valueChanges();
-    }
-    //Eliminar junta 
-    borrarWaterBoard(uid) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            console.log("fun Eminar OK: ", uid);
-            const refWaterB = this.afs.collection("waterboard");
-            const aux = { deleted: true };
-            refWaterB.doc(uid).set(Object.assign({}, aux), { merge: true });
-        });
+    backApp() {
+        this.location.back();
     }
 };
-ServWaterboardDbService.ctorParameters = () => [
-    { type: _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_2__.AngularFirestore }
+BackButtonService.ctorParameters = () => [
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_0__.Location }
 ];
-ServWaterboardDbService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+BackButtonService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
         providedIn: 'root'
     })
-], ServWaterboardDbService);
+], BackButtonService);
 
 
 
