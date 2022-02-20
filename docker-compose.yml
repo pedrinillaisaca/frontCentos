@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+    frontapp:
+        image: nginx-front-image
+        container_name: ngix-front-cont
+        build: front
+        ports:
+          - 80:80
+        volumes:
+          - volumenfront:/usr/share/nginx/html
+        networks:
+          - pro-net
+volumes:
+    volumenfront:
+networks:
+    pro-net:
+
+
