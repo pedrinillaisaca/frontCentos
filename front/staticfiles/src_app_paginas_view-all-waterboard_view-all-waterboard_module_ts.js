@@ -4868,13 +4868,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewAllWaterboardPage": () => (/* binding */ ViewAllWaterboardPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_view_all_waterboard_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-all-waterboard.page.html */ 3103);
 /* harmony import */ var _view_all_waterboard_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-all-waterboard.page.scss */ 1698);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_google_maps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/google-maps */ 6095);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_serv_waterboard_db_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/serv-waterboard-db.service */ 2499);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_google_maps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/google-maps */ 6095);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_native_app_launcher_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/app-launcher/ngx */ 812);
+/* harmony import */ var _services_back_button_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/back-button.service */ 7219);
+
+
 
 
 
@@ -4883,51 +4887,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ViewAllWaterboardPage = class ViewAllWaterboardPage {
-    constructor(waterBdb) {
-        this.waterBdb = waterBdb;
-        this.points = [
-            {
-                position: {
-                    lat: -17.386378,
-                    lng: -66.1628018,
-                },
-                title: 'Parque De la Familia',
-                image: 'https://lh5.googleusercontent.com/p/AF1QipOCgzq_0DYB9AxD-ItTG01x2csLsSfWsawBCypc=w408-h306-k-no',
-                text: 'Animi voluptatem, aliquid impedit ratione placeat necessitatibus quisquam molestiae obcaecati laudantium?',
-            },
-            {
-                position: {
-                    lat: -17.4005556,
-                    lng: -66.1741667,
-                },
-                title: 'Mariscal Santa Cruz',
-                image: 'https://lh5.googleusercontent.com/p/AF1QipMGZeu88O8uZvFOX9PKug7gz-VRhhiXQ78hAFZU=w408-h306-k-no',
-                text: 'Animi voluptatem, aliquid impedit ratione placeat necessitatibus quisquam molestiae obcaecati laudantium?',
-            },
-            {
-                position: {
-                    lat: -17.3810618,
-                    lng: -66.1550974,
-                },
-                title: 'Parque de Educación Vial',
-                image: 'https://lh5.googleusercontent.com/p/AF1QipPIXxrXfshAD6eHbkGScPdNqYBwfJ6ol4qriq2n=w408-h306-k-no',
-                text: 'Animi voluptatem, aliquid impedit ratione placeat necessitatibus quisquam molestiae obcaecati laudantium?',
-            },
-            {
-                position: {
-                    lat: -17.4128145,
-                    lng: -66.158299,
-                },
-                title: 'Parque Kanata',
-                image: 'https://lh5.googleusercontent.com/p/AF1QipOJOq3vm1Gfpa3d4dPR_ca2C240J_PBv701zRAE=w408-h544-k-no',
-                text: 'Animi voluptatem, aliquid impedit ratione placeat necessitatibus quisquam molestiae obcaecati laudantium?',
-            },
-        ];
-        // waterboard:WaterBoard=new WaterBoard();
-        this.juntass = [];
+    constructor(route, router, appLauncher, button) {
+        this.route = route;
+        this.router = router;
+        this.appLauncher = appLauncher;
+        this.button = button;
+        this.route.queryParams.subscribe(params => {
+            try {
+                if (this.router.getCurrentNavigation().extras.queryParams) {
+                    let param = this.router.getCurrentNavigation().extras.queryParams.ubicationParam;
+                    // this.uidWater=this.router.getCurrentNavigation().extras.queryParams.infUser; 
+                    this.marcador = param;
+                }
+            }
+            catch (error) {
+                console.log("Es mi primera vez");
+            }
+        });
     }
     ngOnInit() {
-        this.load();
+        this.runAsc();
         // this.juntas.forEach(
         //     function(value){
         //       console.log((value.            ));    
@@ -4935,33 +4914,65 @@ let ViewAllWaterboardPage = class ViewAllWaterboardPage {
         //     }
         //   );
     }
-    load() {
-        const juntas = this.waterBdb.getWaterBoards();
-        console.log('1 juntas==>' + juntas);
-        juntas.forEach(function (value) {
-            console.log((value));
-            this.juntas.unshift(value);
-            // this.juntass.unshift(value);
+    // load(){
+    //   const juntas= this.waterBdb.getWaterBoards();     
+    //   console.log('1 juntas==>'+juntas); 
+    //   juntas.forEach(
+    //   function(value){
+    //     console.log((value));  
+    //     this.juntas.unshift(value);
+    //     // this.juntass.unshift(value);
+    //     }
+    //   );                  
+    // }
+    testAsync() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                //here our function should be implemented 
+                setTimeout(() => {
+                    console.log("Durante");
+                    resolve();
+                    ;
+                }, 1500);
+            });
         });
     }
-    onSlideDidChange() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
-            console.log("USO onSlideDidChange");
-            const currentSlide = yield this.slides.getActiveIndex();
-            const point = this.points[currentSlide];
-            this.map.panTo(point.position);
+    callerFun() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            console.log("Antes");
+            yield this.testAsync();
+            console.log("Despues");
+            this.map.panTo(this.marcador);
+            this.map.zoom = -100;
         });
+    }
+    runAsc() {
+        this.callerFun();
+    }
+    runMap() {
+        const options = {};
+        options.uri = 'google.navigation:q=' + this.marcador.lat + ',' + this.marcador.lng + '&mode=1'; //ESTA LINEA ES MUY IMPORTANTE !!!!!!!
+        options.packageName = 'com.google.android.apps.maps';
+        //console.log("INFORMACIONS DE LAS OPCIONES ",options)
+        this.appLauncher.canLaunch(options) //canLaunch(options)
+            .then((canLaunch) => {
+            this.appLauncher.launch(options);
+        })
+            .catch((error) => { console.log("Error desconicido"); });
     }
 };
 ViewAllWaterboardPage.ctorParameters = () => [
-    { type: src_app_services_serv_waterboard_db_service__WEBPACK_IMPORTED_MODULE_2__.ServWaterboardDbService }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: _ionic_native_app_launcher_ngx__WEBPACK_IMPORTED_MODULE_2__.AppLauncher },
+    { type: _services_back_button_service__WEBPACK_IMPORTED_MODULE_3__.BackButtonService }
 ];
 ViewAllWaterboardPage.propDecorators = {
-    map: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewChild, args: [_angular_google_maps__WEBPACK_IMPORTED_MODULE_5__.GoogleMap, { static: false },] }],
-    slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonSlides, { static: false },] }]
+    map: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: [_angular_google_maps__WEBPACK_IMPORTED_MODULE_7__.GoogleMap, { static: false },] }],
+    slides: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_6__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonSlides, { static: false },] }]
 };
-ViewAllWaterboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+ViewAllWaterboardPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-view-all-waterboard',
         template: _raw_loader_view_all_waterboard_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_all_waterboard_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -4983,7 +4994,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-slides {\n  height: 200px;\n  position: absolute;\n  bottom: 0px;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXctYWxsLXdhdGVyYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSiIsImZpbGUiOiJ2aWV3LWFsbC13YXRlcmJvYXJkLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1zbGlkZXMge1xyXG4gICAgaGVpZ2h0OiAyMDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvdHRvbTogMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-slides {\n  height: 200px;\n  position: absolute;\n  bottom: 0px;\n  width: 100%;\n}\n\nion-content #map {\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  transition: opacity 150ms ease-in;\n  display: block;\n}\n\nion-content #map.show-map {\n  opacity: 1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXctYWxsLXdhdGVyYm9hcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSjs7QUFHSTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLGlDQUFBO0VBQ0EsY0FBQTtBQUFSOztBQUNRO0VBQ0ksVUFBQTtBQUNaIiwiZmlsZSI6InZpZXctYWxsLXdhdGVyYm9hcmQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXNsaWRlcyB7XHJcbiAgICBoZWlnaHQ6IDIwMHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW9uLWNvbnRlbnQge1xyXG4gICAgI21hcCB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIG9wYWNpdHk6IDA7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogb3BhY2l0eSAxNTBtcyBlYXNlLWluO1xyXG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICAgICYuc2hvdy1tYXAge1xyXG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufSJdfQ== */");
 
 /***/ }),
 
@@ -4998,7 +5009,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n      </ion-buttons>\n      <ion-title>View all Water Boards</ion-title>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n  <google-map height=\"100%\" width=\"100%\" [center]=\"center\">\n    <map-marker\n    *ngFor=\"let point of points\"\n      [position]=\"point.position\"\n      [title]=\"point.title\"\n  >\n  </map-marker>\n</google-map>\n<ion-slides (ionSlideDidChange)=\"onSlideDidChange()\">\n  <ion-slide *ngFor=\"let point of points\">\n    <ion-card>\n      <ion-item>\n        <ion-thumbnail slot=\"start\">\n          <img [src]=\"point.image\">\n        </ion-thumbnail>\n        <ion-label class=\"ion-text-wrap\">\n          <h2>{{ point.title }}</h2>\n          <p>{{ point.text }}</p>\n        </ion-label>\n      </ion-item>\n    </ion-card>\n  </ion-slide>\n</ion-slides>\n<ion-button color=\"dark\" (click)=\"run()\">Ver Ubicaciones</ion-button>\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n            <ion-menu-button></ion-menu-button>\r\n        </ion-buttons>\r\n        <ion-title>Ubicación de la junta</ion-title>\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <google-map height=\"100%\" width=\"100%\" [center]=\"center\">\r\n        <map-marker [position]=\"marcador\" [title]=\"PruebaNombre\">\r\n        </map-marker>\r\n    </google-map>\r\n    <ion-fab vertical='bottom' horizontal='left' slot=\"fixed\">\r\n        <ion-fab-button (click)=\"button.backApp()\">\r\n            <ion-icon name=\"arrow-back\"></ion-icon>\r\n        </ion-fab-button>\r\n    </ion-fab>\r\n    <ion-fab vertical='bottom' horizontal='center' slot=\"fixed\">\r\n        <ion-fab-button (click)=\"runMap()\">\r\n            <ion-icon name=\"paper-plane\"></ion-icon>\r\n        </ion-fab-button>\r\n        <!-- <ion-label style=\"color: black;\">\r\n            <h1><b>Iniciar Ruta</b></h1>\r\n        </ion-label> -->\r\n    </ion-fab>\r\n</ion-content>");
 
 /***/ })
 

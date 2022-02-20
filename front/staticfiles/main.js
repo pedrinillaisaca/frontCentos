@@ -52,10 +52,6 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_folder_folder_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./folder/folder.module */ 3412)).then(m => m.FolderPageModule)
     },
     {
-        path: 'folder/:pag-general',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_pag-general_pag-general_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/pag-general/pag-general.module */ 8689)).then(m => m.PagGeneralPageModule)
-    },
-    {
         path: 'login',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_login_login_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/login/login.module */ 5099)).then(m => m.LoginPageModule)
     },
@@ -78,17 +74,63 @@ const routes = [
     },
     {
         path: 'register-waterboard',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_foto_service_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_register-waterboard_register-waterboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/register-waterboard/register-waterboard.module */ 5180)).then(m => m.RegisterWaterboardPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_camera_dist_esm_index_js-node_modules_capacitor_filesystem_dis-732b43"), __webpack_require__.e("default-src_app_componentes_googlemaps_googlemaps_component_ts-src_app_modelo_WaterBoard_ts-s-438510"), __webpack_require__.e("src_app_paginas_register-waterboard_register-waterboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/register-waterboard/register-waterboard.module */ 5180)).then(m => m.RegisterWaterboardPageModule),
         canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
     },
     {
         path: 'galery',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_services_foto_service_ts"), __webpack_require__.e("src_app_paginas_galery_galery_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/galery/galery.module */ 4599)).then(m => m.GaleryPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_camera_dist_esm_index_js-node_modules_capacitor_filesystem_dis-732b43"), __webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_galery_galery_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/galery/galery.module */ 4599)).then(m => m.GaleryPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
     },
     {
         path: 'view-data-water-board',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_view-data-water-board_view-data-water-board_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/view-data-water-board/view-data-water-board.module */ 1910)).then(m => m.ViewDataWaterBoardPageModule)
-    }
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_view-data-water-board_view-data-water-board_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/view-data-water-board/view-data-water-board.module */ 1910)).then(m => m.ViewDataWaterBoardPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
+    },
+    {
+        path: 'search-waterboard',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_search-waterboard_search-waterboard_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/search-waterboard/search-waterboard.module */ 3498)).then(m => m.SearchWaterboardPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
+    },
+    {
+        path: 'pag-prueba',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_pag-prueba_pag-prueba_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/pag-prueba/pag-prueba.module */ 998)).then(m => m.PagPruebaPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
+    },
+    {
+        path: 'edit-water-board',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_camera_dist_esm_index_js-node_modules_capacitor_filesystem_dis-732b43"), __webpack_require__.e("default-src_app_componentes_googlemaps_googlemaps_component_ts-src_app_modelo_WaterBoard_ts-s-438510"), __webpack_require__.e("src_app_paginas_edit-water-board_edit-water-board_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/edit-water-board/edit-water-board.module */ 2103)).then(m => m.EditWaterBoardPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
+    },
+    {
+        path: 'galery-present',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_capacitor_camera_dist_esm_index_js-node_modules_capacitor_filesystem_dis-732b43"), __webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_galery-present_galery-present_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/galery-present/galery-present.module */ 3906)).then(m => m.GaleryPresentPageModule),
+        canActivate: [_guards_is_login_guard__WEBPACK_IMPORTED_MODULE_0__.IsLoginGuard]
+    },
+    {
+        path: 'view-image',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_view-image_view-image_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/view-image/view-image.module */ 3728)).then(m => m.ViewImagePageModule)
+    },
+    {
+        path: 'not-fount',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_not-fount_not-fount_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/not-fount/not-fount.module */ 3997)).then(m => m.NotFountPageModule)
+    },
+    {
+        path: 'nosotros',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_nosotros_nosotros_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/nosotros/nosotros.module */ 4910)).then(m => m.NosotrosPageModule)
+    },
+    {
+        path: 'desarolladores',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_paginas_desarolladores_desarolladores_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/desarolladores/desarolladores.module */ 2781)).then(m => m.DesarolladoresPageModule)
+    },
+    {
+        path: 'version',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_paginas_version_version_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./paginas/version/version.module */ 3294)).then(m => m.VersionPageModule)
+    },
+    {
+        path: '**',
+        redirectTo: '/not-fount'
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -116,38 +158,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 1106);
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 3069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/auth.service */ 7556);
+
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(authSvc) {
+        this.authSvc = authSvc;
         //paginas barra lateral
+        this.user$ = this.authSvc.afAuth.user;
+        this.user1$ = this.authSvc.user1$;
         this.selectedIndex = 0;
         this.appPages = [
-            { title: 'Login', url: '/login', icon: 'mail' },
-            { title: 'Registro', url: '/register-waterboard', icon: 'paper-plane' },
-            { title: 'Ver juntas Agua', url: '/view-all-waterboard', icon: 'heart' },
-            { title: 'Archived', url: '/view-data-water-board', icon: 'archive' },
-            // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-            // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+            // { title: 'Login', url: '/login', icon: 'mail',hiden: false },
+            { title: 'Buscar Juntas', url: '/search-waterboard', icon: 'water', hiden: true },
+            { title: 'Registro', url: '/register-waterboard', icon: 'attach', hiden: true },
+            // { title: 'Prueba pagina', url: '/pag-prueba', icon: 'archive' },    
+            // { title: 'Galeria antigua', url: '/galery', icon: 'heart' },
+            // { title: 'galetia', url: '/galery-present', icon: 'heart' },
+            // { title: 'informacion de la junta', url: '/view-data-water-board', icon: 'heart' },
         ];
-        this.labels = [];
+        this.labels = [
+            { title: 'Cerrar Sesión', url: '/login', icon: 'exit', hiden: false },
+            { title: 'Nosotros', url: '/nosotros', icon: 'business', hiden: true },
+            { title: 'Desarrolladores', url: '/desarolladores', icon: 'build', hiden: true },
+            { title: 'Ayuda', url: '/version', icon: 'help', hiden: true }
+        ];
     }
     ngOnInit() {
-        const path = window.location.pathname.split('folder/')[1];
-        if (path !== undefined) {
-            this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-        }
+        // this.user$.subscribe(x=>{
+        //   this.user1$=this.authSvc.getUserById(x.uid);            
+        // });
+    }
+    logout() {
+        console.log('salir');
+        this.authSvc.logout();
     }
 };
-AppComponent.ctorParameters = () => [];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+AppComponent.ctorParameters = () => [
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService }
+];
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-root',
         template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -169,19 +227,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ 2340);
-/* harmony import */ var _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire/compat/firestore */ 2182);
-/* harmony import */ var _angular_fire_compat___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire/compat/ */ 8747);
-/* harmony import */ var _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/compat/auth */ 1325);
-/* harmony import */ var _angular_fire_compat_database__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/compat/database */ 9978);
-/* harmony import */ var _angular_fire_compat_storage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/compat/storage */ 3893);
+/* harmony import */ var _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/compat/firestore */ 2182);
+/* harmony import */ var _angular_fire_compat___WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire/compat/ */ 8939);
+/* harmony import */ var _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/fire/compat/auth */ 1325);
+/* harmony import */ var _angular_fire_compat_database__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire/compat/database */ 9978);
+/* harmony import */ var _angular_fire_compat_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/compat/storage */ 3893);
+/* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pipes/pipes.module */ 5503);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _ionic_native_app_launcher_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/app-launcher/ngx */ 812);
 
 
 
@@ -196,20 +257,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
-            _angular_fire_compat___WEBPACK_IMPORTED_MODULE_7__.AngularFireModule.initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.firebase),
-            _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_8__.AngularFireAuthModule,
-            _angular_fire_compat_database__WEBPACK_IMPORTED_MODULE_9__.AngularFireDatabaseModule,
-            _angular_fire_compat_storage__WEBPACK_IMPORTED_MODULE_10__.AngularFireStorageModule,
-            _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_11__.AngularFirestoreModule
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule,
+            _angular_fire_compat___WEBPACK_IMPORTED_MODULE_9__.AngularFireModule.initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.firebase),
+            _angular_fire_compat_auth__WEBPACK_IMPORTED_MODULE_10__.AngularFireAuthModule,
+            _angular_fire_compat_database__WEBPACK_IMPORTED_MODULE_11__.AngularFireDatabaseModule,
+            _angular_fire_compat_storage__WEBPACK_IMPORTED_MODULE_12__.AngularFireStorageModule,
+            _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_13__.AngularFirestoreModule,
+            _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_3__.PipesModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.ReactiveFormsModule,
         ],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicRouteStrategy }],
+        providers: [
+            _ionic_native_app_launcher_ngx__WEBPACK_IMPORTED_MODULE_4__.AppLauncher,
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicRouteStrategy }
+        ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
@@ -282,6 +352,129 @@ IsLoginGuard = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
+/***/ 4189:
+/*!*************************************************!*\
+  !*** ./src/app/pipes/filtro-coincident.pipe.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FiltroCoincidentPipe": () => (/* binding */ FiltroCoincidentPipe)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let FiltroCoincidentPipe = class FiltroCoincidentPipe {
+    transform(value, arg, arg1) {
+        if (arg === '' || arg.length < 3)
+            return value;
+        const resultPosts = [];
+        for (const post of value) {
+            // PILAS CON ESTTO  post.nombre
+            if (post.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+                resultPosts.push(post);
+                // if(arg1 == undefined){
+                //   };
+                // }else{
+                //   if (post.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1 && post.provincia.toLowerCase().indexOf(arg1.toLowerCase()) > -1) {
+                //     resultPosts.push(post);
+                //   };
+            }
+        }
+        ;
+        return resultPosts;
+    }
+};
+FiltroCoincidentPipe = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Pipe)({
+        name: 'filtroCoincident'
+    })
+], FiltroCoincidentPipe);
+
+
+
+/***/ }),
+
+/***/ 7960:
+/*!*******************************************!*\
+  !*** ./src/app/pipes/filtro-prov.pipe.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FiltroProvPipe": () => (/* binding */ FiltroProvPipe)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let FiltroProvPipe = class FiltroProvPipe {
+    transform(value, arg) {
+        // if (arg === '' || arg.length < 3) return value;
+        try {
+            // PILAS ES PORQUE ALGUNAS JUNTAS NO TIENE LA PROVINCIA
+            const resultPosts = [];
+            for (const post of value) {
+                // PILAS CON ESTTO  post.nombre
+                if (post.provincia.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+                    resultPosts.push(post);
+                }
+                ;
+            }
+            return resultPosts;
+        }
+        catch (error) {
+        }
+    }
+};
+FiltroProvPipe = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Pipe)({
+        name: 'filtroProv'
+    })
+], FiltroProvPipe);
+
+
+
+/***/ }),
+
+/***/ 5503:
+/*!***************************************!*\
+  !*** ./src/app/pipes/pipes.module.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PipesModule": () => (/* binding */ PipesModule)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _filtro_coincident_pipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filtro-coincident.pipe */ 4189);
+/* harmony import */ var _filtro_prov_pipe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filtro-prov.pipe */ 7960);
+
+
+
+
+let PipesModule = class PipesModule {
+};
+PipesModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
+        declarations: [_filtro_coincident_pipe__WEBPACK_IMPORTED_MODULE_0__.FiltroCoincidentPipe, _filtro_prov_pipe__WEBPACK_IMPORTED_MODULE_1__.FiltroProvPipe],
+        imports: [],
+        exports: [_filtro_coincident_pipe__WEBPACK_IMPORTED_MODULE_0__.FiltroCoincidentPipe, _filtro_prov_pipe__WEBPACK_IMPORTED_MODULE_1__.FiltroProvPipe],
+    })
+], PipesModule);
+
+
+
+/***/ }),
+
 /***/ 7556:
 /*!******************************************!*\
   !*** ./src/app/services/auth.service.ts ***!
@@ -318,7 +511,7 @@ let AuthService = class AuthService {
         this.afs = afs;
         this.user$ = this.afAuth.authState.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.switchMap)((user) => {
             if (user) {
-                return this.afs.doc(`users/${user.uid}`).valueChanges();
+                return this.afs.doc(`users/${user.uid}`).update;
             }
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(null);
         }));
@@ -347,7 +540,6 @@ let AuthService = class AuthService {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
             try {
                 const { user } = yield this.afAuth.createUserWithEmailAndPassword(email, password);
-                yield this.sendVerifcationEmail();
                 // this.notificationServ.confirmacion("Registro Existoso","");
                 return user;
             }
@@ -357,11 +549,58 @@ let AuthService = class AuthService {
             }
         });
     }
+    registerAndUser(email, password, name) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                const { user } = yield this.afAuth.createUserWithEmailAndPassword(email, password);
+                const userRef = this.afs.doc(`users/${user.uid}`);
+                const data = {
+                    uid: user.uid,
+                    email: user.email,
+                    emailVerified: user.emailVerified,
+                    displayName: name,
+                };
+                userRef.set(data, { merge: true });
+                return data;
+            }
+            catch (error) {
+                console.log('Error->', error);
+                this.notificationServ.notificacionToasError(error.message);
+            }
+        });
+    }
+    registerComplete(email, password, name, lastname) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                const { user } = yield this.afAuth.createUserWithEmailAndPassword(email, password);
+                const data = {
+                    uid: user.uid,
+                    email: user.email,
+                    emailVerified: user.emailVerified,
+                    displayName: name + " " + lastname
+                };
+                user.updateProfile(data); //VALIDO POR SI ACASO QUIERO PONER UNA FOTO DE PERFIL O DEMAS COSAS
+                const nombres = name + " " + lastname;
+                this.updateUserData(user, nombres);
+                return user;
+            }
+            catch (error) {
+                console.log('Error->', error);
+                this.notificationServ.notificacionToasError(error.message);
+            }
+        });
+    }
+    getUserById(uid) {
+        return this.afs.collection("users", ref => ref.where('uid', '==', uid)).valueChanges();
+    }
+    updateUserAppById(uid) {
+        this.user1$ = this.afs.collection("users", ref => ref.where('uid', '==', uid)).valueChanges();
+    }
     login(email, password) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
             try {
                 const { user } = yield this.afAuth.signInWithEmailAndPassword(email, password);
-                this.updateUserData(user);
+                // this.updateUserData(user);
                 return user;
             }
             catch (error) {
@@ -386,6 +625,7 @@ let AuthService = class AuthService {
     }
     logout() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            this.user1$ = null;
             try {
                 yield this.afAuth.signOut();
             }
@@ -395,13 +635,13 @@ let AuthService = class AuthService {
             }
         });
     }
-    updateUserData(user) {
+    updateUserData(user, nombres) {
         const userRef = this.afs.doc(`users/${user.uid}`);
         const data = {
             uid: user.uid,
             email: user.email,
             emailVerified: user.emailVerified,
-            displayName: user.displayName,
+            displayName: nombres
         };
         return userRef.set(data, { merge: true });
     }
@@ -441,22 +681,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NotificacionesService": () => (/* binding */ NotificacionesService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _serv_waterboard_db_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./serv-waterboard-db.service */ 2499);
+
 
 
 
 
 let NotificacionesService = class NotificacionesService {
-    constructor(toastController, alertController, router) {
+    constructor(toastController, alertController, router, serWaterDB) {
         this.toastController = toastController;
         this.alertController = alertController;
         this.router = router;
+        this.serWaterDB = serWaterDB;
     }
     notificacionToast(text) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             console.log("Llamada a las notificaciones:");
             const toast = yield this.toastController.create({
                 message: text,
@@ -466,7 +709,7 @@ let NotificacionesService = class NotificacionesService {
         });
     }
     notificacionToasError(text) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             console.log("Llamada a las notificaciones:");
             const toast = yield this.toastController.create({
                 message: '<strong>' + text + '</strong>',
@@ -477,8 +720,20 @@ let NotificacionesService = class NotificacionesService {
             toast.present();
         });
     }
-    confirmacion(header, message, funcion) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+    notiErrorConTiempo(text, tiempo) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            console.log("Llamada a las notificaciones:");
+            const toast = yield this.toastController.create({
+                message: '<strong>' + text + '</strong>',
+                duration: tiempo,
+                position: "bottom",
+                color: "danger"
+            });
+            toast.present();
+        });
+    }
+    confirmacion(header, message, funtion) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
                 cssClass: 'my-custom-class',
                 header: header,
@@ -494,7 +749,32 @@ let NotificacionesService = class NotificacionesService {
                         text: 'Aceptar',
                         role: 'ok',
                         handler: () => {
-                            funcion();
+                            funtion();
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+    confirmacionEliminarJunta(header, message, uid) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__awaiter)(this, void 0, void 0, function* () {
+            const alert = yield this.alertController.create({
+                cssClass: 'my-custom-class',
+                header: header,
+                message: message,
+                buttons: [
+                    {
+                        text: 'Cancelar',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => {
+                        }
+                    }, {
+                        text: 'Aceptar',
+                        role: 'ok',
+                        handler: () => {
+                            this.serWaterDB.borrarWaterBoard(uid);
                         }
                     }
                 ]
@@ -504,15 +784,101 @@ let NotificacionesService = class NotificacionesService {
     }
 };
 NotificacionesService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.AlertController },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ToastController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.AlertController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router },
+    { type: _serv_waterboard_db_service__WEBPACK_IMPORTED_MODULE_0__.ServWaterboardDbService }
 ];
-NotificacionesService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+NotificacionesService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable)({
         providedIn: 'root'
     })
 ], NotificacionesService);
+
+
+
+/***/ }),
+
+/***/ 2499:
+/*!********************************************************!*\
+  !*** ./src/app/services/serv-waterboard-db.service.ts ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ServWaterboardDbService": () => (/* binding */ ServWaterboardDbService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/compat/firestore */ 2182);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 8049);
+
+
+
+
+let ServWaterboardDbService = class ServWaterboardDbService {
+    constructor(afs) {
+        this.afs = afs;
+    }
+    // guardamos en la base de datos un registro 
+    saveWaterBoard(waterboard) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            const refUsuario = this.afs.collection("waterboard"); //referencia a la tabla de la base de datos
+            if (waterboard.uid == null)
+                waterboard.uid = this.afs.createId();
+            refUsuario.doc(waterboard.uid).set(Object.assign({}, waterboard), { merge: true });
+        });
+    }
+    // retorna una lista de las juntas de agua las cuales no tengan un eliminado logico
+    getWaterBoards() {
+        // return this.afs.collection("waterboard",ref => ref.where('deleted', '==', false)).valueChanges();  
+        return this.afs.collection("waterboard").valueChanges();
+    }
+    // retorna determinada junta en funcion al uid de la misma
+    getWaterBoardById(uid) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            try {
+                let aux = yield this.afs.collection("waterboard", ref => ref.where('uid', '==', uid))
+                    .valueChanges().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.first)()).toPromise().then(doc => {
+                    return doc;
+                }).catch(error => {
+                    throw error;
+                });
+                if (aux == null)
+                    return {};
+                return aux[0];
+            }
+            catch (error) {
+                console.error("Error get waterboard ById", error);
+                throw error;
+            }
+        });
+    }
+    //segunda manera de obtener una determinada junta
+    getWaterBoardById2(uid) {
+        console.log("ACTIVE SERVICIO");
+        return this.afs.collection("waterboard", ref => ref.where('uid', '==', uid).where('deleted', '==', false)).valueChanges();
+    }
+    //Eliminar junta 
+    borrarWaterBoard(uid) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
+            console.log("fun Eminar OK: ", uid);
+            const refWaterB = this.afs.collection("waterboard");
+            const aux = { deleted: true };
+            refWaterB.doc(uid).set(Object.assign({}, aux), { merge: true });
+        });
+    }
+};
+ServWaterboardDbService.ctorParameters = () => [
+    { type: _angular_fire_compat_firestore__WEBPACK_IMPORTED_MODULE_2__.AngularFirestore }
+];
+ServWaterboardDbService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injectable)({
+        providedIn: 'root'
+    })
+], ServWaterboardDbService);
 
 
 
@@ -536,12 +902,12 @@ const environment = {
     production: false,
     ApiKeyGoogleMaps: 'AIzaSyAk8tRQ9RP98I_NSLD10PjoQAsvt-Enpn0',
     firebase: {
-        apiKey: "AIzaSyB10boJXwOKUVA6GoQgORN7PYXhvYhN5Ug",
-        authDomain: "tesisprueba11-3b961.firebaseapp.com",
-        projectId: "tesisprueba11-3b961",
-        storageBucket: "tesisprueba11-3b961.appspot.com",
-        messagingSenderId: "943899179170",
-        appId: "1:943899179170:web:250ec4d29ca6ba06fbbffb"
+        apiKey: "AIzaSyB9hkHkJkXk2aDi_QAMKSav3XhPjE63rek",
+        authDomain: "pruebatesis13.firebaseapp.com",
+        projectId: "pruebatesis13",
+        storageBucket: "pruebatesis13.appspot.com",
+        messagingSenderId: "798806666417",
+        appId: "1:798806666417:web:a7dcb9408026e87c844690"
     }
 };
 
@@ -871,7 +1237,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDJFQUFBO0FBQ0Y7O0FBRUE7RUFDRSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtBQUNGOztBQUVBO0VBQ0UsZUFBQTtBQUNGOztBQUVBO0VBQ0UsbUJBQUE7QUFDRjs7QUFFQTs7RUFFRSxrQkFBQTtBQUNGOztBQUVBO0VBQ0UsMkRBQUE7QUFDRjs7QUFFQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUVBLGdCQUFBO0FBQUY7O0FBR0E7RUFDRSxlQUFBO0VBRUEsbUJBQUE7RUFFQSxjQUFBO0VBRUEsZ0JBQUE7QUFIRjs7QUFNQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQUhGOztBQU1BO0VBQ0Usc0RBQUE7QUFIRjs7QUFNQTtFQUNFLCtCQUFBO0FBSEY7O0FBTUE7RUFDRSxjQUFBO0FBSEY7O0FBTUE7RUFDRSxnQkFBQTtBQUhGOztBQU1BO0VBQ0Usc0JBQUE7QUFIRjs7QUFNQTtFQUNFLG1CQUFBO0FBSEY7O0FBTUE7RUFDRSxpQkFBQTtFQUNBLG1CQUFBO0FBSEY7O0FBTUE7RUFDRSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFIRjs7QUFNQTtFQUNFLCtCQUFBO0FBSEY7O0FBTUE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQUhGOztBQU1BO0VBQ0Usa0JBQUE7QUFIRjs7QUFNQTs7RUFFRSxrQkFBQTtFQUNBLG1CQUFBO0FBSEY7O0FBTUE7RUFDRSxrQkFBQTtBQUhGOztBQU1BO0VBQ0UscUJBQUE7RUFDQSxlQUFBO0VBRUEsb0NBQUE7QUFKRjs7QUFPQTtFQUNFLGlDQUFBO0FBSkYiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1pdGVtLWJhY2tncm91bmQsIHZhcigtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yLCAjZmZmKSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiA4cHg7XG4gIC0tcGFkZGluZy1lbmQ6IDhweDtcbiAgLS1wYWRkaW5nLXRvcDogMjBweDtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDA7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3Qge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0taW9uLWNvbG9yLXN0ZXAtMTUwLCAjZDdkOGRhKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDIycHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG5cbiAgbWluLWhlaWdodDogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuXG4gIG1hcmdpbi1ib3R0b206IDE4cHg7XG5cbiAgY29sb3I6ICM3NTc1NzU7XG5cbiAgbWluLWhlaWdodDogMjZweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xuICAtLXBhZGRpbmctc3RhcnQ6IDEwcHg7XG4gIC0tcGFkZGluZy1lbmQ6IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWJhY2tncm91bmQ6IHJnYmEodmFyKC0taW9uLWNvbG9yLXByaW1hcnktcmdiKSwgMC4xNCk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBjb2xvcjogIzYxNmU3ZTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcbiAgLS1wYWRkaW5nLWVuZDogMTZweDtcbiAgLS1taW4taGVpZ2h0OiA1MHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBmb250LXNpemU6IDI0cHg7XG4gIGNvbG9yOiAjNzM4NDlhO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1ub3RlIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDE2cHg7XG5cbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1tZWRpdW0tc2hhZGUpO1xufVxuXG5pb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn0iXX0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n\nimg.mediana {\n  width: 100px;\n  height: 100px;\n  padding-left: 10%;\n  padding-bottom: 10%;\n}\n\nimg.grande {\n  width: 250px;\n  height: 250px;\n}\n\nimg.peque {\n  width: 25px;\n  height: 25px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJFQUFBO0FBQ0o7O0FBRUE7RUFDSSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtBQUNKOztBQUVBO0VBQ0ksZUFBQTtBQUNKOztBQUVBO0VBQ0ksbUJBQUE7QUFDSjs7QUFFQTs7RUFFSSxrQkFBQTtBQUNKOztBQUVBO0VBQ0ksMkRBQUE7QUFDSjs7QUFFQTtFQUNJLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBRUE7RUFDSSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7QUFDSjs7QUFFQTtFQUNJLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQUNKOztBQUVBO0VBQ0ksc0RBQUE7QUFDSjs7QUFFQTtFQUNJLCtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxjQUFBO0FBQ0o7O0FBRUE7RUFDSSxnQkFBQTtBQUNKOztBQUVBO0VBQ0ksc0JBQUE7QUFDSjs7QUFFQTtFQUNJLG1CQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtFQUNBLG1CQUFBO0FBQ0o7O0FBRUE7RUFDSSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLCtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxlQUFBO0VBQ0EsY0FBQTtBQUNKOztBQUVBO0VBQ0ksa0JBQUE7QUFDSjs7QUFFQTs7RUFFSSxrQkFBQTtFQUNBLG1CQUFBO0FBQ0o7O0FBRUE7RUFDSSxrQkFBQTtBQUNKOztBQUVBO0VBQ0kscUJBQUE7RUFDQSxlQUFBO0VBQ0Esb0NBQUE7QUFDSjs7QUFFQTtFQUNJLGlDQUFBO0FBQ0o7O0FBRUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7QUFDSjs7QUFFQTtFQUNJLFlBQUE7RUFDQSxhQUFBO0FBQ0o7O0FBRUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1tZW51IGlvbi1jb250ZW50IHtcclxuICAgIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiA4cHg7XHJcbiAgICAtLXBhZGRpbmctZW5kOiA4cHg7XHJcbiAgICAtLXBhZGRpbmctdG9wOiAyMHB4O1xyXG4gICAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWxpc3Qge1xyXG4gICAgcGFkZGluZzogMjBweCAwO1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXHJcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCB7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0taW9uLWNvbG9yLXN0ZXAtMTUwLCAjZDdkOGRhKTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xyXG4gICAgZm9udC1zaXplOiAyMnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIG1pbi1oZWlnaHQ6IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxOHB4O1xyXG4gICAgY29sb3I6ICM3NTc1NzU7XHJcbiAgICBtaW4taGVpZ2h0OiAyNnB4O1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24taXRlbSB7XHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDEwcHg7XHJcbiAgICAtLXBhZGRpbmctZW5kOiAxMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCB7XHJcbiAgICAtLWJhY2tncm91bmQ6IHJnYmEodmFyKC0taW9uLWNvbG9yLXByaW1hcnktcmdiKSwgMC4xNCk7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1pdGVtIGlvbi1pY29uIHtcclxuICAgIGNvbG9yOiAjNjE2ZTdlO1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24tbGFiZWwge1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1jb250ZW50IHtcclxuICAgIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51LmlvcyBpb24tbGlzdCB7XHJcbiAgICBwYWRkaW5nOiAyMHB4IDAgMCAwO1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gICAgbGluZS1oZWlnaHQ6IDI0cHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0ge1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxNnB4O1xyXG4gICAgLS1wYWRkaW5nLWVuZDogMTZweDtcclxuICAgIC0tbWluLWhlaWdodDogNTBweDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcclxuICAgIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbn1cclxuXHJcbmlvbi1tZW51LmlvcyBpb24taXRlbSBpb24taWNvbiB7XHJcbiAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICBjb2xvcjogIzczODQ5YTtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA4cHg7XHJcbn1cclxuXHJcbmlvbi1tZW51LmlvcyBpb24tbGlzdC1oZWFkZXIsXHJcbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDE2cHg7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogOHB4O1xyXG59XHJcblxyXG5pb24tbm90ZSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLW1lZGl1bS1zaGFkZSk7XHJcbn1cclxuXHJcbmlvbi1pdGVtLnNlbGVjdGVkIHtcclxuICAgIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxufVxyXG5cclxuaW1nLm1lZGlhbmEge1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgaGVpZ2h0OiAxMDBweDtcclxuICAgIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDEwJTtcclxufVxyXG5cclxuaW1nLmdyYW5kZSB7XHJcbiAgICB3aWR0aDogMjUwcHg7XHJcbiAgICBoZWlnaHQ6IDI1MHB4O1xyXG59XHJcblxyXG5pbWcucGVxdWUge1xyXG4gICAgd2lkdGg6IDI1cHg7XHJcbiAgICBoZWlnaHQ6IDI1cHg7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -886,7 +1252,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\n      <ion-content>\n        <ion-list id=\"inbox-list\">\n          <ion-list-header>APP TITULACIÓN</ion-list-header>\n          <ion-note>Tesis</ion-note>\n\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n            <ion-item routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" routerLinkActive=\"selected\">\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list id=\"labels-list\">\n          <ion-list-header>Labels</ion-list-header>\n\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\n            <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon>\n            <ion-label>{{ label }}</ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n    <ion-split-pane contentId=\"main-content\">\r\n        <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n            <ion-content>\r\n                <ion-list id=\"inbox-list\">\r\n                    <ion-list-header style=\"padding-bottom: 10%;\">REGISTRO DE JUNTAS WEB</ion-list-header>\r\n\r\n                    <img class=\"mediana\" src=\"../assets/imageMenu.jpeg\" alt=\"\">\r\n                    <!-- <label *ngIf=\"user$ | async as user\"><h2 >Bienvenido:  Pedro Illaisaca </h2></label> -->\r\n                    <!-- <label *ngIf=\"user1$ | async as user\"><h2 >Bienvenido: {{user[0].displayName}} </h2><ion-note>{{user[0].email}}</ion-note></label> -->\r\n                    <label *ngIf=\"user$ | async as user\"><h2 >Bienvenido: </h2><h3>{{user.displayName}} </h3><ion-note>{{user.email}}</ion-note></label>\r\n                    <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n                        <ion-item routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" routerLinkActive=\"selected\">\r\n                            <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n                            <ion-label>{{ p.title }}</ion-label>\r\n                        </ion-item>\r\n\r\n                    </ion-menu-toggle>\r\n                </ion-list>\r\n                <ion-list id=\"labels-list\">\r\n                    <ion-list-header>Aplicación</ion-list-header>\r\n                    <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of labels; let i = index\">\r\n\r\n                        <ion-item *ngIf=\"p.hiden==false && user$ | async as user\" (click)=\"logout()\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" routerLinkActive=\"selected\">\r\n                            <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n                            <ion-label>{{ p.title }}</ion-label>\r\n                        </ion-item>\r\n                        <ion-item *ngIf=\"p.hiden\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" routerLinkActive=\"selected\">\r\n                            <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n                            <ion-label>{{ p.title }}</ion-label>\r\n                        </ion-item>\r\n\r\n                    </ion-menu-toggle>\r\n                </ion-list>\r\n            </ion-content>\r\n        </ion-menu>\r\n        <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n    </ion-split-pane>\r\n\r\n\r\n</ion-app>");
 
 /***/ })
 
